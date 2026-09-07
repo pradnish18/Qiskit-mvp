@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Quantum Editorial Palette */
+  --bg-obsidian: #07090e;
+  --bg-obsidian-subtle: #0d121c;
+  --surface-card: rgba(13, 18, 28, 0.7);
+  --surface-elevated: rgba(18, 25, 40, 0.85);
+
+  /* Typography Colors */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-technical: #38bdf8;
+
+  /* Technical IBM Precision Accents */
+  --accent-ibm-blue: #0f62fe;
+  --accent-ibm-bright: #3381ff;
+  --accent-cyan: #0072c3;
+  --accent-cyan-subtle: rgba(0, 114, 195, 0.12);
+
+  /* Hairlines & Borders */
+  --border-hairline: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(255, 255, 255, 0.14);
+  --border-active: rgba(15, 98, 254, 0.45);
+}
+
+body {
+  background-color: var(--bg-obsidian);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  selection-background-color: #0f62fe;
+  selection-color: #ffffff;
+}
+
+::selection {
+  background-color: rgba(15, 98, 254, 0.35);
+  color: #ffffff;
+}
+
+.font-mono-tech {
+  font-family: var(--font-mono);
+}
+
+/* Minimal, near-imperceptible Technical Grid Texture */
+.bg-tech-grid {
+  background-size: 64px 64px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.012) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
+}
+
+/* Accessibility Focus Ring */
+.focus-ring {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid var(--accent-ibm-bright);
+  outline-offset: 2px;
+}
+
+/* Accessibility: prefers-reduced-motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Subtle Cinematic Ambient Motion for Quantum Artifact */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes float-subtle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(6px) rotate(-1deg);
+  }
+}
+
